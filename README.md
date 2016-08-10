@@ -43,8 +43,7 @@ Or alternatively if you are using JSX:
   type="serial"
   theme="light"
   graphs={[...]}
-  dataProvider={[...]}>
-</AmCharts.React>
+  dataProvider={[...]} />
 ```
 
 The configuration is exactly the same as the `AmCharts.makeChart` method.
@@ -69,7 +68,7 @@ React.createElement(AmCharts.React, config)
 Or alternatively if you are using JSX:
 
 ```
-<AmCharts.React {...config}></AmCharts.React>
+<AmCharts.React {...config} />
 ```
 
 ----
