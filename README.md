@@ -1,3 +1,30 @@
+Downloading
+===========
+
+If you are using npm, you can use this command:
+
+```
+npm install amcharts/amcharts3-react
+```
+
+Alternatively, you can put `amcharts/amcharts3-react` into your `dependencies` or `devDependencies`:
+
+```
+{
+  "dependencies": {
+    "amcharts3-react": "amcharts/amcharts3-react"
+  }
+}
+```
+
+----
+
+If you are not using npm, you can use git to download the package:
+
+```
+git clone https://github.com/amcharts/amcharts3-react.git
+```
+
 Installation
 ============
 
