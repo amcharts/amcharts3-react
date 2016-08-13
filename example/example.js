@@ -32,7 +32,7 @@ var Chart = React.createClass({
     var self = this;
 
     self.setState({
-      // Update the chart dataProvider every 5 seconds
+      // Update the chart dataProvider every 3 seconds
       timer: setInterval(function () {
         self.setState({
           dataProvider: generateData()
