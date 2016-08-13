@@ -1,0 +1,9 @@
+{
+  "name": "amcharts3-react",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amcharts/amcharts3-react.git"
+  },
+  "main": "amcharts3-react.js"
+}
