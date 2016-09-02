@@ -31,8 +31,8 @@ Installation
 Include React and React-DOM:
 
 ```
-<script src="https://npmcdn.com/react@15.3.0/dist/react.min.js"></script>
-<script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
+<script src="https://unpkg.com/react@15.3.0/dist/react.min.js"></script>
+<script src="https://unpkg.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
 ```
 
 Also include AmCharts:
