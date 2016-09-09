@@ -1,65 +1,68 @@
-Downloading
-===========
-
-If you are using npm, you can use this command:
-
-```
-npm install amcharts/amcharts3-react
-```
-
-Alternatively, you can put `amcharts/amcharts3-react` into your `dependencies` or `devDependencies`:
-
-```
-{
-  "dependencies": {
-    "amcharts3-react": "amcharts/amcharts3-react"
-  }
-}
-```
-
-----
-
-If you are not using npm, you can use git to download the package:
-
-```
-git clone https://github.com/amcharts/amcharts3-react.git
-```
-
 Installation
 ============
 
-* If you are using `<script>` tags:
+If you are using `<script>` tags
+--------------------------------
 
-  1. Include React and React-DOM:
+1. Use git to download the amcharts3-react plugin:
 
-     ```
-     <script src="https://unpkg.com/react@15.3.0/dist/react.min.js"></script>
-     <script src="https://unpkg.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
-     ```
+   ```
+   git clone https://github.com/amcharts/amcharts3-react.git
+   ```
 
-  2. Also include AmCharts:
+2. Include React and React-DOM:
 
-     ```
-     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-     <script src="https://www.amcharts.com/lib/3/serial.js"></script>
-     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-     ```
+   ```
+   <script src="https://unpkg.com/react@15.3.0/dist/react.min.js"></script>
+   <script src="https://unpkg.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
+   ```
 
-  3. Lastly include the amcharts3-react plugin:
+3. Also include AmCharts:
 
-     ```
-     <script src="amcharts3-react.js"></script>
-     ```
+   ```
+   <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+   <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+   <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+   ```
 
-* If you are using a bundler like Webpack or Browserify, simply import the `amcharts3-react` plugin:
+4. Lastly include the amcharts3-react plugin:
 
-  ```
-  var React = require("react");
-  var ReactDOM = require("react-dom");
-  var AmCharts = require("amcharts3-react");
-  ```
+   ```
+   <script src="amcharts3-react/amcharts3-react.js"></script>
+   ```
 
-  You can now use `AmCharts` directly, rather than using the `AmCharts.React` global.
+If you are using a bundler like Webpack or Browserify
+-----------------------------------------------------
+
+1. Create a `package.json` which includes `react`, `react-dom`, `amcharts3`, and `amcharts3-react`:
+
+   ```
+   {
+     "dependencies": {
+       "react": "^15.3.0",
+       "react-dom": "^15.3.0",
+       "amcharts3": "amcharts/amcharts3",
+       "amcharts3-react": "amcharts/amcharts3-react"
+     }
+   }
+   ```
+
+2. Run `npm install`
+
+3. You can now import the `amcharts3-react` plugin, rather than using the `AmCharts.React` global:
+
+   ```
+   var AmCharts = require("amcharts3-react");
+   ```
+
+4. You will probably need to specify the [path](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) property, so that AmCharts can find the appropriate images:
+
+   ```
+   React.createElement(AmCharts, {
+     "path": "node_modules/amcharts3/amcharts",
+     ...
+   })
+   ```
 
 Usage
 =====
@@ -85,7 +88,7 @@ Or alternatively if you are using JSX:
   dataProvider={[...]} />
 ```
 
-The configuration is exactly the same as the `AmCharts.makeChart` method.
+The configuration is exactly the same as the [AmCharts.makeChart](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
 
 ----
 
@@ -112,7 +115,7 @@ Or alternatively if you are using JSX:
 
 ----
 
-Changes to the configuration are automatically detected when rendering (you do not need to call `validateNow` or `validateData`).
+Changes to the configuration are automatically detected when rendering (you do not need to call [validateNow](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [validateData](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
 
 In addition, this plugin automatically generates an `id`, so you do not need to specify it.
 
