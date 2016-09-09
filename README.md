@@ -4,20 +4,20 @@ Installation
 If you are using `<script>` tags
 --------------------------------
 
-1. Use git to download the amcharts3-react plugin:
+1. Use `git` to download the `amcharts3-react` plugin:
 
    ```
    git clone https://github.com/amcharts/amcharts3-react.git
    ```
 
-2. Include React and React-DOM:
+2. Include `react` and `react-dom`:
 
    ```
    <script src="https://unpkg.com/react@15.3.0/dist/react.min.js"></script>
    <script src="https://unpkg.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
    ```
 
-3. Also include AmCharts:
+3. Also include `amcharts`:
 
    ```
    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -25,7 +25,7 @@ If you are using `<script>` tags
    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
    ```
 
-4. Lastly include the amcharts3-react plugin:
+4. Lastly include the `amcharts3-react` plugin:
 
    ```
    <script src="amcharts3-react/amcharts3-react.js"></script>
@@ -59,8 +59,7 @@ If you are using a bundler like Webpack or Browserify
 
    ```
    React.createElement(AmCharts, {
-     "path": "node_modules/amcharts3/amcharts",
-     ...
+     "path": "node_modules/amcharts3/amcharts"
    })
    ```
 
