@@ -1,10 +1,15 @@
 {
   "name": "amcharts3-react",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "SEE LICENSE IN LICENSE",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/amcharts/amcharts3-react.git"
   },
-  "main": "amcharts3-react.js"
+  "peerDependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "amcharts": "amcharts/amcharts3"
+  }
 }
