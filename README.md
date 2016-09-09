@@ -121,6 +121,9 @@ You can see some example React programs in the `example` folder. It updates the 
 
 ## Changelog
 
+### 1.1.1
+* Fixing an [issue with peerDependencies](https://github.com/npm/npm/issues/3218)
+
 ### 1.1.0
 * Adding in support for npm / webpack
 
