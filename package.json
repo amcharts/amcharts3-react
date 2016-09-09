@@ -6,10 +6,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/amcharts/amcharts3-react.git"
-  },
-  "peerDependencies": {
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1",
-    "amcharts": "amcharts/amcharts3"
   }
 }
