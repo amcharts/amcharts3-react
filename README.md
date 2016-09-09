@@ -118,7 +118,7 @@ Changes to the configuration are automatically detected when rendering (you do n
 
 In addition, this plugin automatically generates an `id`, so you do not need to specify it.
 
-You can see some example React programs in the `example` folder. It updates the chart's `dataProvider` every 3 seconds.
+You can see some example React programs in the `examples` folder. It updates the chart's `dataProvider` every 3 seconds.
 
 
 ## Changelog
