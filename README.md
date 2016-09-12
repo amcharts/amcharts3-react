@@ -34,7 +34,7 @@ If you are using `<script>` tags
 If you are using a bundler like Webpack or Browserify
 -----------------------------------------------------
 
-1. Create a `package.json` which includes `react`, `react-dom`, `amcharts3`, and `amcharts3-react`:
+1. Create a `package.json` which includes `react`, `react-dom`, `amcharts/amcharts3`, and `amcharts/amcharts3-react`:
 
    ```
    {
@@ -49,11 +49,13 @@ If you are using a bundler like Webpack or Browserify
 
 2. Run `npm install`
 
-3. You can now import the `amcharts3-react` plugin, rather than using the `AmCharts.React` global:
+3. You can now import the `amcharts3-react` plugin:
 
    ```
    var AmCharts = require("amcharts3-react");
    ```
+
+   Note: when using the plugin, you must use `AmCharts` rather than `AmCharts.React`
 
 4. You will probably need to specify the [path](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) property, so that AmCharts can find the appropriate images:
 
