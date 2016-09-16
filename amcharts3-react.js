@@ -171,7 +171,9 @@
     },
 
     componentWillUnmount: function () {
-      this.state.chart.clear();
+      if (this.state.chart) {
+        this.state.chart.clear();
+      }
     },
 
     render: function () {
