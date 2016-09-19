@@ -89,6 +89,10 @@
     return true;
   }
 
+  function isNaN(x) {
+    return x !== x
+  }
+
   function isEqual(x, y) {
     var xType = getType(x);
     var yType = getType(y);
@@ -103,6 +107,9 @@
 
       case "[object Date]":
         return x.getTime() === y.getTime();
+
+      case "[object Number]":
+        return x === y || (isNaN(x) && isNaN(y))
 
       default:
         return x === y;
