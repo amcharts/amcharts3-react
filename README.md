@@ -38,7 +38,7 @@ If you are using a bundler like Webpack or Browserify
 
    ```
    {
-     "dependencies": {
+     "devDependencies": {
        "react": "^15.3.0",
        "react-dom": "^15.3.0",
        "amcharts3": "amcharts/amcharts3",
@@ -64,6 +64,37 @@ If you are using a bundler like Webpack or Browserify
      "path": "node_modules/amcharts3/amcharts"
    })
    ```
+
+5. If you want to use plugins (like [dataloader](https://github.com/amcharts/dataloader), [export](https://github.com/amcharts/export), [responsive](https://github.com/amcharts/responsive), [animate](https://github.com/amcharts/animate), etc.) you will need to do the following steps:
+
+   1. Include the plugin in your `package.json`:
+
+      ```
+      {
+        "devDependencies": {
+          "amcharts3-export": "amcharts/export"
+        }
+      }
+      ```
+
+   2. When you want to use the plugin, use a `require` at the top of the file:
+
+      ```
+      // This must be at the top of the file:
+      require("amcharts3-export");
+
+      // The rest of the code goes here:
+      var React = require("react");
+      var AmCharts = require("amcharts3-react");
+
+      React.createElement(AmCharts, {
+        "export": {
+          "enabled": true
+        }
+      });
+      ```
+
+   You can see an example program in the `examples/webpack-export` folder.
 
 Usage
 =====
@@ -121,7 +152,6 @@ Changes to the configuration are automatically detected when rendering (you do n
 In addition, this plugin automatically generates an `id`, so you do not need to specify it.
 
 You can see some example React programs in the `examples` folder. It updates the chart's `dataProvider` every 3 seconds.
-
 
 ## Changelog
 
