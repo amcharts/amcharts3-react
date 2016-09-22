@@ -55,7 +55,7 @@ If you are using a bundler like Webpack or Browserify
    var AmCharts = require("amcharts3-react");
    ```
 
-   Note: when using the plugin, you must use `AmCharts` rather than `AmCharts.React`
+   **Note:** when using the plugin, you must use `AmCharts` rather than `AmCharts.React`
 
 4. You will probably need to specify the [path](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) property, so that AmCharts can find the appropriate images:
 
