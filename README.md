@@ -77,7 +77,7 @@ If you are using a bundler like Webpack or Browserify
       }
       ```
 
-   2. When you want to use the plugin, use a `require` at the top of the file:
+   2. When you want to use the plugin, put a `require` at the top of the file:
 
       ```
       // This must be at the top of the file:
