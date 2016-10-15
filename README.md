@@ -167,6 +167,9 @@ You can see some example React programs in the `examples` folder. It updates the
 
 ## Changelog
 
+### 1.1.2
+* Fixing an [issue when using `amcharts3-react` on the server](https://github.com/amcharts/amcharts3-react/issues/11)
+
 ### 1.1.1
 * Fixing an [issue with peerDependencies](https://github.com/npm/npm/issues/3218)
 
