@@ -121,6 +121,17 @@
   }
 
 
+  function removeChartListeners(chart, listeners) {
+    if (listeners != null) {
+      // TODO use Object.keys ?
+      for (var key in listeners) {
+        var listener = listeners[key];
+
+        chart.removeListener(chart, listener.event, listener.method);
+      }
+    }
+  }
+
   // TODO make this faster ?
   // TODO does this work for listeners, etc. ?
   function updateChartObject(chart, oldObj, newObj) {
@@ -130,6 +141,11 @@
     for (var key in newObj) {
       // TODO make this faster ?
       if (!(key in oldObj) || !isEqual(oldObj[key], newObj[key])) {
+        if (key === "listeners") {
+          // TODO make this faster ?
+          removeChartListeners(chart, oldObj[key]);
+        }
+
         // TODO make this faster ?
         chart[key] = copy(newObj[key]);
         didUpdate = true;
@@ -139,6 +155,10 @@
     // TODO use Object.keys ?
     for (var key in oldObj) {
       if (!(key in newObj)) {
+        if (key === "listeners") {
+          removeChartListeners(chart, oldObj[key]);
+        }
+
         delete chart[key];
         didUpdate = true;
       }
