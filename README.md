@@ -55,20 +55,6 @@ If you are using a bundler like Webpack or Browserify
    var AmCharts = require("amcharts3-react");
    ```
 
-   **Note:** you must use `AmCharts` rather than `AmCharts.React`:
-
-   ```
-   React.createElement(AmCharts, {
-     ...
-   });
-   ```
-
-   Or alternatively if you are using JSX:
-
-   ```
-   <AmCharts ... />
-   ```
-
 4. You will probably need to specify the [path](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) property, so that AmCharts can find the appropriate images:
 
    ```
@@ -111,10 +97,10 @@ If you are using a bundler like Webpack or Browserify
 Usage
 =====
 
-Use the `AmCharts.React` component in your React programs:
+Use the `AmCharts` component in your React programs:
 
 ```
-React.createElement(AmCharts.React, {
+React.createElement(AmCharts, {
   "type": "serial",
   "theme": "light",
   "graphs": [...],
@@ -125,7 +111,7 @@ React.createElement(AmCharts.React, {
 Or alternatively if you are using JSX:
 
 ```
-<AmCharts.React
+<AmCharts
   type="serial"
   theme="light"
   graphs={[...]}
@@ -148,13 +134,29 @@ var config = {
 ```
 
 ```
-React.createElement(AmCharts.React, config)
+React.createElement(AmCharts, config)
 ```
 
 Or alternatively if you are using JSX:
 
 ```
-<AmCharts.React {...config} />
+<AmCharts {...config} />
+```
+
+----
+
+**Note:** If you are using `<script>` tags, then you must use `AmCharts.React` rather than `AmCharts`:
+
+```
+React.createElement(AmCharts.React, {
+  ...
+});
+```
+
+Or alternatively if you are using JSX:
+
+```
+<AmCharts.React ... />
 ```
 
 ----
