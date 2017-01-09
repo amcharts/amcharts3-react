@@ -208,7 +208,7 @@
         id: this.state.id,
         style: {
           width: "100%",
-          height: "100%"
+          height: this.props.fixedHeight || "100%"
         }
       });
     }
