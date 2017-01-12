@@ -207,8 +207,8 @@
       return React.DOM.div({
         id: this.state.id,
         style: {
-          width: "100%",
-          height: "100%"
+          width: this.props.width || "100%",
+          height: this.props.height || "100%"
         }
       });
     }
