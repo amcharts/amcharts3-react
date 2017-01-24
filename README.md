@@ -39,8 +39,8 @@ If you are using a bundler like Webpack or Browserify
    ```
    {
      "devDependencies": {
-       "react": "^15.3.0",
-       "react-dom": "^15.3.0",
+       "react": "^15.4.2",
+       "react-dom": "^15.4.2",
        "amcharts3": "amcharts/amcharts3",
        "amcharts3-react": "amcharts/amcharts3-react"
      }
@@ -55,10 +55,24 @@ If you are using a bundler like Webpack or Browserify
    var AmCharts = require("amcharts3-react");
    ```
 
+   And then you can use it:
+
+   ```
+   React.createElement(AmCharts.React, {
+     ...
+   });
+   ```
+
+   Or alternatively if you are using JSX:
+
+   ```
+   <AmCharts.React ... />
+   ```
+
 4. You will probably need to specify the [path](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) property, so that AmCharts can find the appropriate images:
 
    ```
-   React.createElement(AmCharts, {
+   React.createElement(AmCharts.React, {
      "path": "node_modules/amcharts3/amcharts"
    })
    ```
@@ -85,7 +99,7 @@ If you are using a bundler like Webpack or Browserify
       var React = require("react");
       var AmCharts = require("amcharts3-react");
 
-      React.createElement(AmCharts, {
+      React.createElement(AmCharts.React, {
         "export": {
           "enabled": true
         }
@@ -168,6 +182,10 @@ In addition, this plugin automatically generates an `id`, so you do not need to 
 You can see some example React programs in the `examples` folder. It updates the chart's `dataProvider` every 3 seconds.
 
 ## Changelog
+
+### 1.1.4
+* Deprecating using `AmCharts` with Webpack, instead use `AmCharts.React`
+* Adding in the various global `AmCharts` properties for Webpack
 
 ### 1.1.3
 * Fixing a bug that caused the `listeners` to trigger multiple times
