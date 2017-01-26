@@ -183,6 +183,9 @@ You can see some example React programs in the `examples` folder. It updates the
 
 ## Changelog
 
+### 1.1.6
+* Fixing a bug where the chart won't show up properly on the first update
+
 ### 1.1.5
 * Fixing a bug which caused stock charts to not update correctly
 
