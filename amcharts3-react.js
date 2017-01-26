@@ -261,10 +261,7 @@
 
       if (didUpdate) {
         // TODO is this correct ?
-        if (this.state.chart.chartCreated && this.state.chart.chartRendered) {
-          // TODO is this correct ?
-          this.state.chart.validateNow(true, false);
-        }
+        this.state.chart.validateNow(true, false);
       }
     },
 
