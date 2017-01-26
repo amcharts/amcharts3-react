@@ -183,6 +183,9 @@ You can see some example React programs in the `examples` folder. It updates the
 
 ## Changelog
 
+### 1.1.5
+* Fixing a bug which caused stock charts to not update correctly
+
 ### 1.1.4
 * Deprecating using `AmCharts` with Webpack, instead use `AmCharts.React`
 * Adding in the various global `AmCharts` properties for Webpack
