@@ -134,8 +134,6 @@ Or alternatively if you are using JSX:
 
 The configuration is exactly the same as the [AmCharts.makeChart](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
 
-----
-
 Changes to the configuration are automatically detected when rendering (you do not need to call [validateNow](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [validateData](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
 
 In addition, this plugin automatically generates an `id`, so you do not need to specify it.
