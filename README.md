@@ -111,10 +111,10 @@ If you are using a bundler like Webpack or Browserify
 Usage
 =====
 
-Use the `AmCharts` component in your React programs:
+Use the `AmCharts.React` component in your React programs:
 
 ```
-React.createElement(AmCharts, {
+React.createElement(AmCharts.React, {
   "type": "serial",
   "theme": "light",
   "graphs": [...],
@@ -125,7 +125,7 @@ React.createElement(AmCharts, {
 Or alternatively if you are using JSX:
 
 ```
-<AmCharts
+<AmCharts.React
   type="serial"
   theme="light"
   graphs={[...]}
@@ -133,45 +133,6 @@ Or alternatively if you are using JSX:
 ```
 
 The configuration is exactly the same as the [AmCharts.makeChart](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
-
-----
-
-You can also store the chart configuration separately:
-
-```
-var config = {
-  "type": "serial",
-  "theme": "light",
-  "graphs": [...],
-  "dataProvider": [...]
-};
-```
-
-```
-React.createElement(AmCharts, config)
-```
-
-Or alternatively if you are using JSX:
-
-```
-<AmCharts {...config} />
-```
-
-----
-
-**Note:** If you are using `<script>` tags, then you must use `AmCharts.React` rather than `AmCharts`:
-
-```
-React.createElement(AmCharts.React, {
-  ...
-});
-```
-
-Or alternatively if you are using JSX:
-
-```
-<AmCharts.React ... />
-```
 
 ----
 
