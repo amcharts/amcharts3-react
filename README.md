@@ -69,7 +69,7 @@ If you are using a bundler like Webpack or Browserify
    <AmCharts.React ... />
    ```
 
-4. You will probably need to specify the [path](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) property, so that AmCharts can find the appropriate images:
+4. You will probably need to specify the [`path`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) property, so that AmCharts can find the appropriate images:
 
    ```
    React.createElement(AmCharts.React, {
@@ -132,9 +132,9 @@ Or alternatively if you are using JSX:
   dataProvider={[...]} />
 ```
 
-The configuration is exactly the same as the [AmCharts.makeChart](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
+The configuration is exactly the same as the [`AmCharts.makeChart`](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
 
-Changes to the configuration are automatically detected when rendering (you do not need to call [validateNow](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [validateData](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
+Changes to the configuration are automatically detected when rendering (you do not need to call [`validateNow`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [`validateData`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
 
 In addition, this plugin automatically generates an `id`, so you do not need to specify it.
 
@@ -159,7 +159,7 @@ You can see some example React programs in the `examples` folder. It updates the
 * Fixing an [issue when using `amcharts3-react` on the server](https://github.com/amcharts/amcharts3-react/issues/11)
 
 ### 1.1.1
-* Fixing an [issue with peerDependencies](https://github.com/npm/npm/issues/3218)
+* Fixing an [issue with `peerDependencies`](https://github.com/npm/npm/issues/3218)
 
 ### 1.1.0
 * Adding in support for npm / webpack
