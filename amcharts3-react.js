@@ -259,9 +259,11 @@
     componentDidUpdate: function (oldProps) {
       var didUpdate = updateObject(this.state.chart, oldProps, this.props);
 
+      // TODO make this faster
       if (didUpdate) {
-        // TODO is this correct ?
-        this.state.chart.validateNow(true, false);
+        this.state.chart.validateData();
+        // TODO is this needed ?
+        this.state.chart.validateNow();
       }
     },
 
