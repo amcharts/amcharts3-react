@@ -142,6 +142,9 @@ You can see some example React programs in the `examples` folder. It updates the
 
 ## Changelog
 
+### 1.1.7
+* Fixing a bug where the chart does not zoom out when changing the `dataProvider`
+
 ### 1.1.6
 * Fixing a bug where the chart won't show up properly on the first update
 
