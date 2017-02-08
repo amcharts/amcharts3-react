@@ -52,7 +52,7 @@ var Chart = React.createClass({
 
   render: function () {
     // Render the chart
-    return React.createElement(AmCharts, {
+    return React.createElement(AmCharts.React, {
       "path": "node_modules/amcharts3/amcharts",
       "type": "serial",
       "theme": "light",
