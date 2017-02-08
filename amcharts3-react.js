@@ -261,7 +261,7 @@
 
       // TODO make this faster
       if (didUpdate) {
-        this.state.chart.validateNow();
+        this.state.chart.validateNow(true, false);
         this.state.chart.validateData();
       }
     },
