@@ -104,7 +104,7 @@
   }
 
 
-  function updateArray(a, x, y, isSkipOldData=false) {
+  function updateArray(a, x, y, isSkipOldData) {
     var didUpdate = false;
 
     if (x !== y) {
@@ -149,7 +149,7 @@
     }
 
 
-  function update(obj, key, x, y, activeSkip=false, isSkipOldData=false) {
+  function update(obj, key, x, y, activeSkip=false, isSkipOldData) {
     var didUpdate = false;
 
     if (x !== y) {
