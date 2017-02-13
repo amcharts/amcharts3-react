@@ -149,7 +149,7 @@
     }
 
 
-  function update(obj, key, x, y, activeSkip=false, isSkipOldData) {
+  function update(obj, key, x, y, activeSkip, isSkipOldData) {
     var didUpdate = false;
 
     if (x !== y) {
