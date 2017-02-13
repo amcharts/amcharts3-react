@@ -149,16 +149,21 @@
     }
 
 
-  function update(obj, key, x, y, isSkipOldData=false) {
+  function update(obj, key, x, y, activeSkip=false, isSkipOldData=false) {
     var didUpdate = false;
 
     if (x !== y) {
       var xType = getType(x);
       var yType = getType(y);
 
-      var tempIsSkipOldData = isSkipOldData;
-      if (key === 'dataProvider' && y.length > x.length) {
-          tempIsSkipOldData = true;
+      var tempIsSkipOldData = false;
+
+      if (activeSkip) {
+          var tempIsSkipOldData = isSkipOldData;
+
+          if (key === 'dataProvider' && y.length > x.length) {
+              tempIsSkipOldData = true;
+          }
       }
 
       if (xType === yType) {
@@ -226,7 +231,7 @@
               removeChartListeners(chart, oldObj[key], newObj[key]);
             }
 
-            if (update(chart, key, oldObj[key], newObj[key])) {
+            if (update(chart, key, oldObj[key], newObj[key], newObj.activeSkip)) {
               didUpdate = true;
             }
 
