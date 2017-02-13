@@ -104,7 +104,7 @@
   }
 
 
-  function updateArray(a, x, y) {
+  function updateArray(a, x, y, isSkipOldData=false) {
     var didUpdate = false;
 
     if (x !== y) {
@@ -118,10 +118,11 @@
 
       for (var i = 0; i < yLength; ++i) {
         if (i < xLength) {
-          if (update(a, i, x[i], y[i])) {
-            didUpdate = true;
-          }
-
+            if (!isSkipOldData) {
+                if (update(a, i, x[i], y[i])) {
+                    didUpdate = true;
+                }
+            }
         } else {
           // TODO make this faster ?
           a[i] = copy(y[i]);
@@ -134,18 +135,36 @@
     return didUpdate;
   }
 
+    function updateArrayNewBulk(a, y) {
+        var didUpdate = false;
 
-  function update(obj, key, x, y) {
+        for (var i = 0; i < y.length; ++i) {
+            // TODO make this faster ?
+            a[i] = copy(y[i]);
+            // TODO is this necessary ?
+            didUpdate = true;
+        }
+
+        return didUpdate;
+    }
+
+
+  function update(obj, key, x, y, isSkipOldData=false) {
     var didUpdate = false;
 
     if (x !== y) {
       var xType = getType(x);
       var yType = getType(y);
 
+      var tempIsSkipOldData = isSkipOldData;
+      if (key === 'dataProvider' && y.length > x.length) {
+          tempIsSkipOldData = true;
+      }
+
       if (xType === yType) {
         switch (xType) {
         case "[object Array]":
-          if (updateArray(obj[key], x, y)) {
+          if (updateArray(obj[key], x, y, tempIsSkipOldData)) {
             didUpdate = true;
           }
           break;
@@ -235,7 +254,6 @@
     return didUpdate;
   }
 
-
   var id = 0;
 
   AmCharts.React = React.createClass({
@@ -255,14 +273,23 @@
       });
     },
 
-    // TODO is this correct ? should this use componentWillUpdate instead ?
-    componentDidUpdate: function (oldProps) {
-      var didUpdate = updateObject(this.state.chart, oldProps, this.props);
+    componentWillReceiveProps: function (nextProps) {
+      if (nextProps.chartVersion != this.props.chartVersion) {
+          var id = this.state.id;
+          this.state.chart.clear();
+          var props = copy(nextProps);
 
-      // TODO make this faster
-      if (didUpdate) {
-        this.state.chart.validateNow(true, false);
-        this.state.chart.validateData();
+          this.setState({
+              chart: AmCharts.makeChart(id, props)
+          });
+      } else {
+          var didUpdate = updateObject(this.state.chart, this.props, nextProps);
+
+          // TODO make this faster
+          if (didUpdate) {
+              this.state.chart.validateNow(true, false);
+              this.state.chart.validateData();
+          }
       }
     },
 
