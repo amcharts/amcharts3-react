@@ -287,7 +287,7 @@
           this.setState({
               chart: AmCharts.makeChart(id, props)
           });
-      } else {
+      } else if(this.state.chart){
           var didUpdate = updateObject(this.state.chart, this.props, nextProps);
 
           // TODO make this faster
