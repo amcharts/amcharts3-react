@@ -39,8 +39,8 @@ If you are using a bundler like Webpack or Browserify
    ```
    {
      "devDependencies": {
-       "react": "^15.3.0",
-       "react-dom": "^15.3.0",
+       "react": "^15.4.2",
+       "react-dom": "^15.4.2",
        "amcharts3": "amcharts/amcharts3",
        "amcharts3-react": "amcharts/amcharts3-react"
      }
@@ -55,10 +55,24 @@ If you are using a bundler like Webpack or Browserify
    var AmCharts = require("amcharts3-react");
    ```
 
-4. You will probably need to specify the [path](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) property, so that AmCharts can find the appropriate images:
+   And then you can use it:
 
    ```
-   React.createElement(AmCharts, {
+   React.createElement(AmCharts.React, {
+     ...
+   });
+   ```
+
+   Or alternatively if you are using JSX:
+
+   ```
+   <AmCharts.React ... />
+   ```
+
+4. You will probably need to specify the [`path`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) property, so that AmCharts can find the appropriate images:
+
+   ```
+   React.createElement(AmCharts.React, {
      "path": "node_modules/amcharts3/amcharts"
    })
    ```
@@ -85,7 +99,7 @@ If you are using a bundler like Webpack or Browserify
       var React = require("react");
       var AmCharts = require("amcharts3-react");
 
-      React.createElement(AmCharts, {
+      React.createElement(AmCharts.React, {
         "export": {
           "enabled": true
         }
@@ -97,10 +111,10 @@ If you are using a bundler like Webpack or Browserify
 Usage
 =====
 
-Use the `AmCharts` component in your React programs:
+Use the `AmCharts.React` component in your React programs:
 
 ```
-React.createElement(AmCharts, {
+React.createElement(AmCharts.React, {
   "type": "serial",
   "theme": "light",
   "graphs": [...],
@@ -111,63 +125,38 @@ React.createElement(AmCharts, {
 Or alternatively if you are using JSX:
 
 ```
-<AmCharts
+<AmCharts.React
   type="serial"
   theme="light"
   graphs={[...]}
   dataProvider={[...]} />
 ```
 
-The configuration is exactly the same as the [AmCharts.makeChart](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
+The configuration is exactly the same as the [`AmCharts.makeChart`](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
 
-----
-
-You can also store the chart configuration separately:
-
-```
-var config = {
-  "type": "serial",
-  "theme": "light",
-  "graphs": [...],
-  "dataProvider": [...]
-};
-```
-
-```
-React.createElement(AmCharts, config)
-```
-
-Or alternatively if you are using JSX:
-
-```
-<AmCharts {...config} />
-```
-
-----
-
-**Note:** If you are using `<script>` tags, then you must use `AmCharts.React` rather than `AmCharts`:
-
-```
-React.createElement(AmCharts.React, {
-  ...
-});
-```
-
-Or alternatively if you are using JSX:
-
-```
-<AmCharts.React ... />
-```
-
-----
-
-Changes to the configuration are automatically detected when rendering (you do not need to call [validateNow](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [validateData](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
+Changes to the configuration are automatically detected when rendering (you do not need to call [`validateNow`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [`validateData`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
 
 In addition, this plugin automatically generates an `id`, so you do not need to specify it.
 
 You can see some example React programs in the `examples` folder. It updates the chart's `dataProvider` every 3 seconds.
 
 ## Changelog
+
+### 1.1.8
+* Fixing another bug with updating the chart data
+
+### 1.1.7
+* Fixing a bug where the chart does not zoom out when changing the `dataProvider`
+
+### 1.1.6
+* Fixing a bug where the chart won't show up properly on the first update
+
+### 1.1.5
+* Fixing a bug which caused stock charts to not update correctly
+
+### 1.1.4
+* Deprecating using `AmCharts` with Webpack, instead use `AmCharts.React`
+* Adding in the various global `AmCharts` properties for Webpack
 
 ### 1.1.3
 * Fixing a bug that caused the `listeners` to trigger multiple times
@@ -176,7 +165,7 @@ You can see some example React programs in the `examples` folder. It updates the
 * Fixing an [issue when using `amcharts3-react` on the server](https://github.com/amcharts/amcharts3-react/issues/11)
 
 ### 1.1.1
-* Fixing an [issue with peerDependencies](https://github.com/npm/npm/issues/3218)
+* Fixing an [issue with `peerDependencies`](https://github.com/npm/npm/issues/3218)
 
 ### 1.1.0
 * Adding in support for npm / webpack
