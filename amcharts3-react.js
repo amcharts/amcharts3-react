@@ -169,13 +169,13 @@
       if (xType === yType) {
         switch (xType) {
         case "[object Array]":
-          if (updateArray(obj[key], x, y, tempIsSkipOldData)) {
+          if (obj && updateArray(obj[key], x, y, tempIsSkipOldData)) {
             didUpdate = true;
           }
           break;
 
         case "[object Object]":
-          if (updateObject(obj[key], x, y)) {
+          if (obj && updateObject(obj[key], x, y)) {
             didUpdate = true;
           }
           break;
