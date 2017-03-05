@@ -217,7 +217,8 @@
   }
 
   function updateObject(chart, oldObj, newObj) {
-    var didUpdate = false;
+    var didUpdateClass = false;
+    var didUpdateData = false;
 
     if (oldObj !== newObj) {
       // TODO use Object.keys ?
@@ -232,13 +233,21 @@
             }
 
             if (update(chart, key, oldObj[key], newObj[key], newObj.activeSkip)) {
-              didUpdate = true;
+                if (key = 'dataProvider') {
+                    didUpdateData = true;
+                } else {
+                    didUpdateClass = true;
+                }
             }
 
           } else {
             // TODO make this faster ?
             chart[key] = copy(newObj[key]);
-            didUpdate = true;
+              if (key = 'dataProvider') {
+                  didUpdateData = true;
+              } else {
+                  didUpdateClass = true;
+              }
           }
         }
       }
@@ -251,12 +260,16 @@
           }
 
           delete chart[key];
-          didUpdate = true;
+            if (key = 'dataProvider') {
+                didUpdateData = true;
+            } else {
+                didUpdateClass = true;
+            }
         }
       }
     }
 
-    return didUpdate;
+    return {didUpdateData, didUpdateClass};
   }
 
   var id = 0;
@@ -279,23 +292,17 @@
     },
 
     componentWillReceiveProps: function (nextProps) {
-      if (nextProps.chartVersion != this.props.chartVersion) {
-          var id = this.state.id;
-          this.state.chart.clear();
-          var props = copy(nextProps);
+        if(this.state.chart){
+            var didUpdate = updateObject(this.state.chart, this.props, nextProps);
 
-          this.setState({
-              chart: AmCharts.makeChart(id, props)
-          });
-      } else if(this.state.chart){
-          var didUpdate = updateObject(this.state.chart, this.props, nextProps);
+            if (didUpdate.didUpdateClass) {
+                this.state.chart.validateNow(true, false);
+            }
 
-          // TODO make this faster
-          if (didUpdate) {
-              this.state.chart.validateNow(true, false);
-              this.state.chart.validateData();
-          }
-      }
+            if (didUpdate.didUpdateData) {
+                this.state.chart.validateData();
+            }
+        }
     },
 
     componentWillUnmount: function () {
@@ -313,5 +320,7 @@
         }
       });
     }
+
   });
 })();
+
