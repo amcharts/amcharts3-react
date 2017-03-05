@@ -269,7 +269,7 @@
       }
     }
 
-    return {didUpdateData, didUpdateClass};
+    return {didUpdateData:didUpdateData, didUpdateClass:didUpdateClass};
   }
 
   var id = 0;
