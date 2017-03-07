@@ -297,9 +297,7 @@
 
             if (didUpdate.didUpdateClass) {
                 this.state.chart.validateNow(true, false);
-            }
-
-            if (didUpdate.didUpdateData) {
+            } else if (didUpdate.didUpdateData) {
                 if (this.props.animate) {
                     this.state.chart.animateData(nextProps.newDataProvider, { duration: 1000 });
                 } else {
