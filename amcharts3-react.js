@@ -1,3 +1,5 @@
+const isEqual = require('lodash/isEqual');
+
 (function () {
   function getType(x) {
     // TODO make this faster ?
@@ -64,7 +66,7 @@
 
 
   function removeChartListeners(chart, x, y) {
-    if (x !== y) {
+    if (!isEqual(x,y)) {
       // TODO is this necessary ?
       if (x == null) {
         x = [];
@@ -107,7 +109,7 @@
   function updateArray(a, x, y, isSkipOldData) {
     var didUpdate = false;
 
-    if (x !== y) {
+    if (!isEqual(x,y)) {
       var xLength = x.length;
       var yLength = y.length;
 
@@ -152,7 +154,7 @@
   function update(obj, key, x, y, activeSkip, isSkipOldData) {
     var didUpdate = false;
 
-    if (x !== y) {
+    if (!isEqual(x,y)) {
       var xType = getType(x);
       var yType = getType(y);
 
@@ -197,7 +199,7 @@
           break;
 
         default:
-          if (x !== y) {
+          if (!isEqual(x,y)) {
             // TODO is the copy necessary ?
             obj[key] = copy(y);
             didUpdate = true;
@@ -220,7 +222,7 @@
     var didUpdateClass = false;
     var didUpdateData = false;
 
-    if (oldObj !== newObj) {
+    if (!isEqual(oldObj,newObj)) {
       // TODO use Object.keys ?
       for (var key in newObj) {
         if (hasOwnKey(newObj, key)) {
