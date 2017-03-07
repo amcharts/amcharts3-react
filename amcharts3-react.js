@@ -161,7 +161,7 @@
       if (activeSkip) {
           var tempIsSkipOldData = isSkipOldData;
 
-          if (key === 'dataProvider' && y.length > x.length) {
+          if ((key === 'dataProvider' || key === 'newDataProvider') && y.length > x.length) {
               tempIsSkipOldData = true;
           }
       }
@@ -233,7 +233,7 @@
             }
 
             if (update(chart, key, oldObj[key], newObj[key], newObj.activeSkip)) {
-                if (key = 'dataProvider') {
+                if (key === 'dataProvider' || key === 'newDataProvider') {
                     didUpdateData = true;
                 } else {
                     didUpdateClass = true;
@@ -243,7 +243,7 @@
           } else {
             // TODO make this faster ?
             chart[key] = copy(newObj[key]);
-              if (key = 'dataProvider') {
+              if (key === 'dataProvider' || key === 'newDataProvider') {
                   didUpdateData = true;
               } else {
                   didUpdateClass = true;
@@ -260,7 +260,7 @@
           }
 
           delete chart[key];
-            if (key = 'dataProvider') {
+            if (key === 'dataProvider' || key === 'newDataProvider') {
                 didUpdateData = true;
             } else {
                 didUpdateClass = true;
@@ -300,7 +300,11 @@
             }
 
             if (didUpdate.didUpdateData) {
-                this.state.chart.validateData();
+                if (this.props.isAnimate) {
+                    this.state.chart.animateData(nextProps.newDataProvider, { duration: 1000 });
+                } else {
+                    this.state.chart.validateData();
+                }
             }
         }
     },
