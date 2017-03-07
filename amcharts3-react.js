@@ -300,7 +300,7 @@
             }
 
             if (didUpdate.didUpdateData) {
-                if (this.props.isAnimate) {
+                if (this.props.animate) {
                     this.state.chart.animateData(nextProps.newDataProvider, { duration: 1000 });
                 } else {
                     this.state.chart.validateData();
