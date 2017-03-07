@@ -296,7 +296,7 @@
             var didUpdate = updateObject(this.state.chart, this.props, nextProps);
 
             if (didUpdate.didUpdateClass) {
-                this.state.chart.validateNow(true, false);
+                this.state.chart.validateNow();
             }
 
             if (didUpdate.didUpdateData) {
