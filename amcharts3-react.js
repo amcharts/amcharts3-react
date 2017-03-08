@@ -298,6 +298,10 @@ const isEqual = require('lodash/isEqual');
             var didUpdate = updateObject(this.state.chart, this.props, nextProps);
 
             if (didUpdate.didUpdateClass) {
+                if (this.props.animate) {
+                    this.state.chart.animateData(nextProps.newDataProvider, { duration: 1000 });
+                }
+              
                 this.state.chart.validateNow(true, false);
             } else if (didUpdate.didUpdateData) {
                 if (this.props.animate) {
