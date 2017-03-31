@@ -69,7 +69,7 @@ How to use
 
 6. Lastly, you must use a bundler like [webpack](https://webpack.js.org/), [Browserify](http://browserify.org/), or [Rollup](https://rollupjs.org/). Please see their respective websites for directions on how to use them.
 
-  You can see some examples for [webpack](https://webpack.js.org/) in the `examples/webpack` and `examples/webpack-export` folders. It updates the chart's `dataProvider` every 3 seconds.
+   You can see some examples for [webpack](https://webpack.js.org/) in the `examples/webpack` and `examples/webpack-export` folders. It updates the chart's `dataProvider` every 3 seconds.
 
 
 ## Changelog
