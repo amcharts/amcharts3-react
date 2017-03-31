@@ -1,5 +1,5 @@
-Installation
-============
+How to use
+==========
 
 1. Create a `package.json` which includes `react`, `react-dom`, and `@amcharts/amcharts3-react`:
 
@@ -33,51 +33,44 @@ Installation
 
    ```js
    React.createElement(AmCharts.React, {
-     ...
-   });
+     "type": "serial",
+     "theme": "light",
+     "graphs": [...],
+     "dataProvider": [...]
+   })
    ```
 
    Or alternatively if you are using JSX:
 
    ```js
-   <AmCharts.React ... />
+   <AmCharts.React
+     type="serial"
+     theme="light"
+     graphs={[...]}
+     dataProvider={[...]} />
    ```
 
-5. If you want to use plugins (like [dataloader](https://github.com/amcharts/dataloader), [export](https://github.com/amcharts/export), [responsive](https://github.com/amcharts/responsive), [animate](https://github.com/amcharts/animate), etc.) you will need to do the following steps:
+   The configuration is exactly the same as the [`AmCharts.makeChart`](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
+
+   Changes to the configuration are automatically detected when rendering (you do not need to call [`validateNow`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [`validateData`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
+
+   In addition, this plugin automatically generates an `id`, so you do not need to specify it.
+
+5. If you want to use plugins (like [dataloader](https://github.com/amcharts/dataloader), [export](https://github.com/amcharts/export), [responsive](https://github.com/amcharts/responsive), [animate](https://github.com/amcharts/animate), etc.) you will need to include the appropriate `<script>` tags.
+
+   Here is an example for the [export](https://github.com/amcharts/export) plugin:
+
+   ```html
+   <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+   <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+   ```
 
    You can see an example program in the `examples/webpack-export` folder.
 
-Usage
-=====
+6. Lastly, you must use a bundler like [webpack](https://webpack.js.org/), [Browserify](http://browserify.org/), or [Rollup](https://rollupjs.org/). Please see their respective websites for directions on how to use them.
 
-Use the `AmCharts.React` component in your React programs:
+  You can see some examples for [webpack](https://webpack.js.org/) in the `examples/webpack` and `examples/webpack-export` folders. It updates the chart's `dataProvider` every 3 seconds.
 
-```js
-React.createElement(AmCharts.React, {
-  "type": "serial",
-  "theme": "light",
-  "graphs": [...],
-  "dataProvider": [...]
-})
-```
-
-Or alternatively if you are using JSX:
-
-```js
-<AmCharts.React
-  type="serial"
-  theme="light"
-  graphs={[...]}
-  dataProvider={[...]} />
-```
-
-The configuration is exactly the same as the [`AmCharts.makeChart`](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
-
-Changes to the configuration are automatically detected when rendering (you do not need to call [`validateNow`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [`validateData`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
-
-In addition, this plugin automatically generates an `id`, so you do not need to specify it.
-
-You can see some example React programs in the `examples` folder. It updates the chart's `dataProvider` every 3 seconds.
 
 ## Changelog
 
@@ -99,8 +92,8 @@ You can see some example React programs in the `examples` folder. It updates the
 * Fixing a bug which caused stock charts to not update correctly
 
 ### 1.1.4
-* Deprecating using `AmCharts` with Webpack, instead use `AmCharts.React`
-* Adding in the various global `AmCharts` properties for Webpack
+* Deprecating using `AmCharts` with webpack, instead use `AmCharts.React`
+* Adding in the various global `AmCharts` properties for webpack
 
 ### 1.1.3
 * Fixing a bug that caused the `listeners` to trigger multiple times
