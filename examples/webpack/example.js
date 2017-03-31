@@ -1,6 +1,6 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
-var AmCharts = require("amcharts3-react");
+var AmCharts = require("@amcharts/amcharts3-react");
 
 
 // Generate random data
@@ -53,7 +53,6 @@ var Chart = React.createClass({
   render: function () {
     // Render the chart
     return React.createElement(AmCharts.React, {
-      "path": "node_modules/amcharts3/amcharts",
       "type": "serial",
       "theme": "light",
       "marginRight": 40,

@@ -1,63 +1,37 @@
 Installation
 ============
 
-If you are using `<script>` tags
---------------------------------
+1. Create a `package.json` which includes `react`, `react-dom`, and `@amcharts/amcharts3-react`:
 
-1. Use `git` to download the `amcharts3-react` plugin:
-
-   ```
-   git clone https://github.com/amcharts/amcharts3-react.git
-   ```
-
-2. Include `react` and `react-dom`:
-
-   ```
-   <script src="https://unpkg.com/react@15.3.0/dist/react.min.js"></script>
-   <script src="https://unpkg.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
-   ```
-
-3. Also include `amcharts`:
-
-   ```
-   <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-   <script src="https://www.amcharts.com/lib/3/serial.js"></script>
-   <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-   ```
-
-4. Lastly include the `amcharts3-react` plugin:
-
-   ```
-   <script src="amcharts3-react/amcharts3-react.js"></script>
-   ```
-
-If you are using a bundler like Webpack or Browserify
------------------------------------------------------
-
-1. Create a `package.json` which includes `react`, `react-dom`, `amcharts/amcharts3`, and `amcharts/amcharts3-react`:
-
-   ```
+   ```json
    {
      "devDependencies": {
        "react": "^15.4.2",
        "react-dom": "^15.4.2",
-       "amcharts3": "amcharts/amcharts3",
-       "amcharts3-react": "amcharts/amcharts3-react"
+       "@amcharts/amcharts3-react": "^2.0.0"
      }
    }
    ```
 
 2. Run `npm install`
 
-3. You can now import the `amcharts3-react` plugin:
+3. Use `<script>` tags in your HTML file to load AmCharts:
 
+   ```html
+   <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+   <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+   <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
    ```
-   var AmCharts = require("amcharts3-react");
+
+4. You can now import the `@amcharts/amcharts3-react` plugin:
+
+   ```js
+   var AmCharts = require("@amcharts/amcharts3-react");
    ```
 
    And then you can use it:
 
-   ```
+   ```js
    React.createElement(AmCharts.React, {
      ...
    });
@@ -65,46 +39,11 @@ If you are using a bundler like Webpack or Browserify
 
    Or alternatively if you are using JSX:
 
-   ```
+   ```js
    <AmCharts.React ... />
    ```
 
-4. You will probably need to specify the [`path`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) property, so that AmCharts can find the appropriate images:
-
-   ```
-   React.createElement(AmCharts.React, {
-     "path": "node_modules/amcharts3/amcharts"
-   })
-   ```
-
 5. If you want to use plugins (like [dataloader](https://github.com/amcharts/dataloader), [export](https://github.com/amcharts/export), [responsive](https://github.com/amcharts/responsive), [animate](https://github.com/amcharts/animate), etc.) you will need to do the following steps:
-
-   1. Include the plugin in your `package.json`:
-
-      ```
-      {
-        "devDependencies": {
-          "amcharts3-export": "amcharts/export"
-        }
-      }
-      ```
-
-   2. When you want to use the plugin, put a `require` at the top of the file:
-
-      ```
-      // This must be at the top of the file:
-      require("amcharts3-export");
-
-      // The rest of the code goes here:
-      var React = require("react");
-      var AmCharts = require("amcharts3-react");
-
-      React.createElement(AmCharts.React, {
-        "export": {
-          "enabled": true
-        }
-      });
-      ```
 
    You can see an example program in the `examples/webpack-export` folder.
 
@@ -113,7 +52,7 @@ Usage
 
 Use the `AmCharts.React` component in your React programs:
 
-```
+```js
 React.createElement(AmCharts.React, {
   "type": "serial",
   "theme": "light",
@@ -124,7 +63,7 @@ React.createElement(AmCharts.React, {
 
 Or alternatively if you are using JSX:
 
-```
+```js
 <AmCharts.React
   type="serial"
   theme="light"
@@ -141,6 +80,11 @@ In addition, this plugin automatically generates an `id`, so you do not need to 
 You can see some example React programs in the `examples` folder. It updates the chart's `dataProvider` every 3 seconds.
 
 ## Changelog
+
+### 2.0.0
+* Major breaking change: this plugin no longer automatically imports AmCharts, so you must use `<script>` tags to load AmCharts
+
+* Major breaking change: you must now use `AmCharts.React` rather than `AmCharts`
 
 ### 1.1.8
 * Fixing another bug with updating the chart data

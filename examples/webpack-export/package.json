@@ -3,14 +3,12 @@
   "name": "amcharts3-react-example",
   "version": "1.0.0",
   "devDependencies": {
-    "webpack": "^1.13.2",
+    "webpack": "^2.3.2",
 
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
 
-    "amcharts3": "amcharts/amcharts3",
-    "amcharts3-react": "amcharts/amcharts3-react",
-    "amcharts3-export": "amcharts/export"
+    "@amcharts/amcharts3-react": "^2.0.0"
   },
   "scripts": {
     "prepublish": "webpack"
