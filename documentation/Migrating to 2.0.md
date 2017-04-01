@@ -5,7 +5,7 @@ With the release of amCharts React plugin 2.0 we've made some significant change
 
 1. We now have an npm package. In your `package.json`, change `"amcharts3-react": "amcharts/amcharts3-react"` to `"@amcharts/amcharts3-react": "^2.0.0"`
 
-2. In addition, you should remove `"amcharts/amcharts3"` and "amcharts/export"` from your `package.json`
+2. In addition, you should remove `"amcharts/amcharts3"` and `"amcharts/export"` from your `package.json`
 
 3. Delete your `node_modules` folder and run `npm install` to make sure that you have the correct dependencies.
 
@@ -28,7 +28,7 @@ With the release of amCharts React plugin 2.0 we've made some significant change
 
 7. You should remove the `"path": "node_modules/amcharts3/amcharts"` from your chart configuration.
 
-8. If you are using plugins (like [dataloader](https://github.com/amcharts/dataloader), [export](https://github.com/amcharts/export), etc.) then you must load them with a `<script>` tag rather than using `require`:
+8. If you are using plugins (like [dataloader](https://github.com/amcharts/dataloader), [export](https://github.com/amcharts/export), etc.) then you must not import them with `require`, instead you must load them with a `<script>` tag:
 
    ```html
    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
