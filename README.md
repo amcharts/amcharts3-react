@@ -61,6 +61,19 @@ Or alternatively if you are using JSX:
   dataProvider={[...]} />
 ```
 
+You can also pass the entire config object:
+
+```js
+var config = {
+  "type": "serial",
+  "theme": "light",
+  "graphs": [...],
+  "dataProvider": [...]
+};
+
+<AmCharts.React {...config} />
+```
+
 The configuration is exactly the same as the [`AmCharts.makeChart`](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
 
 Changes to the configuration are automatically detected when rendering (you do not need to call [`validateNow`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [`validateData`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
