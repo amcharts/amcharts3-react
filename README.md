@@ -1,5 +1,5 @@
-How to use
-==========
+How to install
+==============
 
 1. Create a `package.json` which includes `react`, `react-dom`, and `@amcharts/amcharts3-react`:
 
@@ -23,53 +23,63 @@ How to use
    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
    ```
 
-4. You can now import the `@amcharts/amcharts3-react` plugin:
+----
 
-   ```js
-   var AmCharts = require("@amcharts/amcharts3-react");
-   ```
+If you are using `<script>` tags, include the `amcharts3-react.js` file in your HTML:
 
-   And then you can use it:
+```html
+<script src="node_modules/@amcharts/amcharts3-react/amcharts3-react.js"></script>
+```
 
-   ```js
-   React.createElement(AmCharts.React, {
-     "type": "serial",
-     "theme": "light",
-     "graphs": [...],
-     "dataProvider": [...]
-   })
-   ```
+----
 
-   Or alternatively if you are using JSX:
+If you are using a bundler (like [webpack](https://webpack.js.org/)), import the `@amcharts/amcharts3-react` plugin:
 
-   ```js
-   <AmCharts.React
-     type="serial"
-     theme="light"
-     graphs={[...]}
-     dataProvider={[...]} />
-   ```
+```js
+var AmCharts = require("@amcharts/amcharts3-react");
+```
 
-   The configuration is exactly the same as the [`AmCharts.makeChart`](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
+How to use
+==========
 
-   Changes to the configuration are automatically detected when rendering (you do not need to call [`validateNow`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [`validateData`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
+```js
+React.createElement(AmCharts.React, {
+  "type": "serial",
+  "theme": "light",
+  "graphs": [...],
+  "dataProvider": [...]
+})
+```
 
-   In addition, this plugin automatically generates an `id`, so you do not need to specify it.
+Or alternatively if you are using JSX:
 
-5. If you want to use plugins (like [dataloader](https://github.com/amcharts/dataloader), [export](https://github.com/amcharts/export), [responsive](https://github.com/amcharts/responsive), [animate](https://github.com/amcharts/animate), etc.) you will need to include the appropriate `<script>` tags.
+```js
+<AmCharts.React
+  type="serial"
+  theme="light"
+  graphs={[...]}
+  dataProvider={[...]} />
+```
 
-   Here is an example for the [export](https://github.com/amcharts/export) plugin:
+The configuration is exactly the same as the [`AmCharts.makeChart`](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
 
-   ```html
-   <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-   <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-   ```
+Changes to the configuration are automatically detected when rendering (you do not need to call [`validateNow`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [`validateData`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
 
-   You can see an example program in the `examples/webpack-export` folder.
+In addition, this plugin automatically generates an `id`, so you do not need to specify it.
 
-6. Lastly, you must use a bundler like [webpack](https://webpack.js.org/), [Browserify](http://browserify.org/), or [Rollup](https://rollupjs.org/). Please see their respective websites for directions on how to use them.
+----
 
-   You can see some examples for [webpack](https://webpack.js.org/) in the `examples/webpack` and `examples/webpack-export` folders. It updates the chart's `dataProvider` every 3 seconds.
+If you want to use plugins (like [dataloader](https://github.com/amcharts/dataloader), [export](https://github.com/amcharts/export), [responsive](https://github.com/amcharts/responsive), [animate](https://github.com/amcharts/animate), etc.) you will need to include the appropriate `<script>` tags.
+
+Here is an example for the [export](https://github.com/amcharts/export) plugin:
+
+```html
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+```
+
+You can see an example program in the `examples/webpack-export` folder. It updates the chart's `dataProvider` every 3 seconds.
 
 
 ## Changelog
