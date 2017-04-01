@@ -23,21 +23,19 @@ How to install
    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
    ```
 
-----
+4. If you are using `<script>` tags, include the `amcharts3-react.js` file in your HTML:
 
-If you are using `<script>` tags, include the `amcharts3-react.js` file in your HTML:
+   ```html
+   <script src="node_modules/@amcharts/amcharts3-react/amcharts3-react.js"></script>
+   ```
 
-```html
-<script src="node_modules/@amcharts/amcharts3-react/amcharts3-react.js"></script>
-```
+   ----
 
-----
+   If you are using a bundler (like [webpack](https://webpack.js.org/)), import the `@amcharts/amcharts3-react` plugin:
 
-If you are using a bundler (like [webpack](https://webpack.js.org/)), import the `@amcharts/amcharts3-react` plugin:
-
-```js
-var AmCharts = require("@amcharts/amcharts3-react");
-```
+   ```js
+   var AmCharts = require("@amcharts/amcharts3-react");
+   ```
 
 How to use
 ==========
