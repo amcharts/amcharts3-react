@@ -67,6 +67,8 @@ Changes to the configuration are automatically detected when rendering (you do n
 
 In addition, this plugin automatically generates an `id`, so you do not need to specify it.
 
+You can find some examples in the `examples` folder.
+
 ----
 
 If you want to use plugins (like [dataloader](https://github.com/amcharts/dataloader), [export](https://github.com/amcharts/export), [responsive](https://github.com/amcharts/responsive), [animate](https://github.com/amcharts/animate), etc.) you will need to include the appropriate `<script>` tags.
