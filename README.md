@@ -31,7 +31,7 @@ How to install
 
    ----
 
-   If you are using a bundler (like [webpack](https://webpack.js.org/)), import the `@amcharts/amcharts3-react` plugin:
+   If you are using a bundler (like [Webpack](https://webpack.js.org/)), import the `@amcharts/amcharts3-react` plugin:
 
    ```js
    var AmCharts = require("@amcharts/amcharts3-react");
@@ -100,8 +100,8 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 * Fixing a bug which caused stock charts to not update correctly
 
 ### 1.1.4
-* Deprecating using `AmCharts` with webpack, instead use `AmCharts.React`
-* Adding in the various global `AmCharts` properties for webpack
+* Deprecating using `AmCharts` with Webpack, instead use `AmCharts.React`
+* Adding in the various global `AmCharts` properties for Webpack
 
 ### 1.1.3
 * Fixing a bug that caused the `listeners` to trigger multiple times
@@ -113,7 +113,7 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 * Fixing an [issue with `peerDependencies`](https://github.com/npm/npm/issues/3218)
 
 ### 1.1.0
-* Adding in support for npm / webpack
+* Adding in support for npm / Webpack
 
 ### 1.0.0
 * Initial release
