@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "amcharts3-react-example",
+  "version": "1.0.0",
+  "devDependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "@amcharts/amcharts3-react": "^2.0.0"
+  }
+}
