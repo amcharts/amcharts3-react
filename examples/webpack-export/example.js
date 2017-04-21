@@ -25,15 +25,16 @@ function generateData() {
 
 
 // Component which contains the dynamic state for the chart
-var Chart = React.createClass({
-  getInitialState: function () {
-    return {
+var Chart = class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       dataProvider: generateData(),
       timer: null
     };
-  },
+  }
 
-  componentDidMount: function () {
+  componentDidMount() {
     var self = this;
 
     self.setState({
@@ -44,13 +45,13 @@ var Chart = React.createClass({
         });
       }, 3000)
     });
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount() {
     clearInterval(this.state.timer);
-  },
+  }
 
-  render: function () {
+  render() {
     // Render the chart
     return React.createElement(AmCharts.React, {
       "type": "serial",
@@ -129,7 +130,7 @@ var Chart = React.createClass({
       }
     });
   }
-});
+};
 
 
 ReactDOM.render(
