@@ -238,40 +238,41 @@
 
   var id = 0;
 
-  AmCharts.React = React.createClass({
-    getInitialState: function () {
-      return {
+  AmCharts.React = class extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
         id: "__AmCharts_React_" + (++id) + "__",
         chart: null
       };
-    },
+    }
 
-    componentDidMount: function () {
+    componentDidMount() {
       // AmCharts mutates the config object, so we have to make a deep copy to prevent that
       var props = copy(this.props);
 
       this.setState({
         chart: AmCharts.makeChart(this.state.id, props)
       });
-    },
+    }
 
     // TODO is this correct ? should this use componentWillUpdate instead ?
-    componentDidUpdate: function (oldProps) {
+    componentDidUpdate(oldProps) {
       var didUpdate = updateObject(this.state.chart, oldProps, this.props);
 
       // TODO make this faster
       if (didUpdate) {
         this.state.chart.validateNow(true);
       }
-    },
+    }
 
-    componentWillUnmount: function () {
+    componentWillUnmount() {
       if (this.state.chart) {
         this.state.chart.clear();
       }
-    },
+    }
 
-    render: function () {
+    render() {
       return React.DOM.div({
         id: this.state.id,
         style: {
@@ -280,5 +281,5 @@
         }
       });
     }
-  });
+  };
 })();
