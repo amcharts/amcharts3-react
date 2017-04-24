@@ -99,6 +99,10 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 
 ## Changelog
 
+### 2.0.1
+
+* Fixing a warning with `React.createClass` [(thanks to Izumi-kun)](https://github.com/amcharts/amcharts3-react/pull/45)
+
 ### 2.0.0
 * Major breaking change: this plugin no longer automatically imports AmCharts, so you must use `<script>` tags to load AmCharts
 
