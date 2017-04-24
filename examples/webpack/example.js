@@ -1,5 +1,6 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
+var createReactClass = require("create-react-class");
 var AmCharts = require("@amcharts/amcharts3-react");
 
 
@@ -25,7 +26,7 @@ function generateData() {
 
 
 // Component which contains the dynamic state for the chart
-var Chart = React.createClass({
+var Chart = createReactClass({
   getInitialState: function () {
     return {
       dataProvider: generateData(),

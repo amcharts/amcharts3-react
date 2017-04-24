@@ -5,6 +5,7 @@
   "devDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "create-react-class": "^15.5.2",
     "@amcharts/amcharts3-react": "^2.0.0"
   }
 }

@@ -20,7 +20,7 @@ function generateData() {
 
 
 // Component which contains the dynamic state for the chart
-var Chart = React.createClass({
+var Chart = createReactClass({
   getInitialState: function () {
     return {
       dataProvider: generateData(),
