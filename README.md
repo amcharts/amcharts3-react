@@ -99,6 +99,10 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 
 ## Changelog
 
+### 2.0.3
+
+* Fixing an [error when updating maps](https://github.com/amcharts/amcharts3-react/issues/40)
+
 ### 2.0.2
 
 * Fixing a warning with `React.createClass` [(thanks to Izumi-kun)](https://github.com/amcharts/amcharts3-react/pull/45)
