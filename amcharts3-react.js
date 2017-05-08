@@ -139,53 +139,56 @@
     var didUpdate = false;
 
     if (x !== y) {
-      var xType = getType(x);
-      var yType = getType(y);
+      // https://github.com/amcharts/amcharts3-react/issues/40
+      if (hasOwnKey(obj, key)) {
+        var xType = getType(x);
+        var yType = getType(y);
 
-      if (xType === yType) {
-        switch (xType) {
-        case "[object Array]":
-          if (updateArray(obj[key], x, y)) {
-            didUpdate = true;
-          }
-          break;
+        if (xType === yType) {
+          switch (xType) {
+          case "[object Array]":
+            if (updateArray(obj[key], x, y)) {
+              didUpdate = true;
+            }
+            break;
 
-        case "[object Object]":
-          if (updateObject(obj[key], x, y)) {
-            didUpdate = true;
-          }
-          break;
+          case "[object Object]":
+            if (updateObject(obj[key], x, y)) {
+              didUpdate = true;
+            }
+            break;
 
-        case "[object Date]":
-          if (x.getTime() !== y.getTime()) {
-            // TODO make this faster ?
-            obj[key] = copy(y);
-            didUpdate = true;
-          }
-          break;
+          case "[object Date]":
+            if (x.getTime() !== y.getTime()) {
+              // TODO make this faster ?
+              obj[key] = copy(y);
+              didUpdate = true;
+            }
+            break;
 
-        case "[object Number]":
-          if (!isNumberEqual(x, y)) {
-            // TODO is the copy necessary ?
-            obj[key] = copy(y);
-            didUpdate = true;
-          }
-          break;
+          case "[object Number]":
+            if (!isNumberEqual(x, y)) {
+              // TODO is the copy necessary ?
+              obj[key] = copy(y);
+              didUpdate = true;
+            }
+            break;
 
-        default:
-          if (x !== y) {
-            // TODO is the copy necessary ?
-            obj[key] = copy(y);
-            didUpdate = true;
+          default:
+            if (x !== y) {
+              // TODO is the copy necessary ?
+              obj[key] = copy(y);
+              didUpdate = true;
+            }
+            break;
           }
-          break;
+
+        // TODO is this correct ?
+        } else {
+          // TODO make this faster ?
+          obj[key] = copy(y);
+          didUpdate = true;
         }
-
-      // TODO is this correct ?
-      } else {
-        // TODO make this faster ?
-        obj[key] = copy(y);
-        didUpdate = true;
       }
     }
 
