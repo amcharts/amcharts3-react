@@ -275,7 +275,7 @@
     },
 
     render: function () {
-      return React.DOM.div({
+      return React.createElement("div", {
         id: this.state.id,
         style: {
           width: this.props.width || "100%",
