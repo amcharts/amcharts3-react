@@ -99,6 +99,10 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 
 ## Changelog
 
+### 2.0.5
+
+* Republishing 2.0.4
+
 ### 2.0.4
 
 * Fixing a deprecation warning with React [(thanks to Izumi-kun)](https://github.com/amcharts/amcharts3-react/pull/49)
