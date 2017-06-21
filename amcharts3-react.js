@@ -147,8 +147,19 @@
         if (xType === yType) {
           switch (xType) {
           case "[object Array]":
-            if (updateArray(obj[key], x, y)) {
+            // TODO hacky, remove this after the following bug is fixed:
+            //      Zendesk #28040
+            //      https://codepen.io/team/amcharts/pen/0d61f559cda74682c0ca55d9a24a0f77
+            //      https://www.amcharts.com/kbase/forcing-grouping-stock-chart-data-specific-periods/
+            if (key === "groupToPeriods") {
+              // TODO is the copy necessary ?
+              obj[key] = copy(y);
               didUpdate = true;
+
+            } else {
+              if (updateArray(obj[key], x, y)) {
+                didUpdate = true;
+              }
             }
             break;
 
@@ -175,11 +186,9 @@
             break;
 
           default:
-            if (x !== y) {
-              // TODO is the copy necessary ?
-              obj[key] = copy(y);
-              didUpdate = true;
-            }
+            // TODO is the copy necessary ?
+            obj[key] = copy(y);
+            didUpdate = true;
             break;
           }
 
