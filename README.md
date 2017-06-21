@@ -99,6 +99,12 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 
 ## Changelog
 
+### 2.0.4
+
+* Fixing a deprecation warning with React [(thanks to Izumi-kun)](https://github.com/amcharts/amcharts3-react/pull/49)
+
+* Working around a bug with `groupToPeriods`
+
 ### 2.0.3
 
 * Fixing an [error when updating maps](https://github.com/amcharts/amcharts3-react/issues/40)
