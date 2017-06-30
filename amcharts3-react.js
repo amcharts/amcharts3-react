@@ -262,8 +262,25 @@
       // AmCharts mutates the config object, so we have to make a deep copy to prevent that
       var props = copy(this.props);
 
+      var chart = AmCharts.makeChart(this.state.id, props);
+
+      // TODO very hacky
+      this._dirty = false;
+      this._init = false;
+
+      var self = this;
+
+      chart.addListener("init", function () {
+        self._init = true;
+
+        if (self._dirty) {
+          self._dirty = false;
+          chart.validateNow(true);
+        }
+      });
+
       this.setState({
-        chart: AmCharts.makeChart(this.state.id, props)
+        chart: chart
       });
     },
 
@@ -273,7 +290,12 @@
 
       // TODO make this faster
       if (didUpdate) {
-        this.state.chart.validateNow(true);
+        if (this._init) {
+          this.state.chart.validateNow(true);
+
+        } else {
+          this._dirty = true;
+        }
       }
     },
 
