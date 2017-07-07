@@ -264,21 +264,6 @@
 
       var chart = AmCharts.makeChart(this.state.id, props);
 
-      // TODO very hacky
-      this._dirty = false;
-      this._init = false;
-
-      var self = this;
-
-      chart.addListener("init", function () {
-        self._init = true;
-
-        if (self._dirty) {
-          self._dirty = false;
-          chart.validateNow(true);
-        }
-      });
-
       this.setState({
         chart: chart
       });
@@ -290,12 +275,7 @@
 
       // TODO make this faster
       if (didUpdate) {
-        if (this._init) {
-          this.state.chart.validateNow(true);
-
-        } else {
-          this._dirty = true;
-        }
+        this.state.chart.validateNow(true);
       }
     },
 
