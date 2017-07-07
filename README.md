@@ -99,6 +99,10 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 
 ## Changelog
 
+### 2.0.7
+
+* Reverting the code which waits for the chart to initialize.
+
 ### 2.0.6
 
 * It now waits for the chart to initialize before it updates (this fixes some errors).
