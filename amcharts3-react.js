@@ -260,9 +260,9 @@
 
     componentDidMount: function () {
       // AmCharts mutates the config object, so we have to make a deep copy to prevent that
-      var props = copy(this.props);
+      var props = copy(this.props.options);
 
-      var chart = AmCharts.makeChart(this.state.id, props);
+      var chart = AmCharts.makeChart(this.state.id, props, this.props.delay);
 
       this.setState({
         chart: chart
@@ -271,7 +271,7 @@
 
     // TODO is this correct ? should this use componentWillUpdate instead ?
     componentDidUpdate: function (oldProps) {
-      var didUpdate = updateObject(this.state.chart, oldProps, this.props);
+      var didUpdate = updateObject(this.state.chart, oldProps, this.props.options);
 
       // TODO make this faster
       if (didUpdate) {
