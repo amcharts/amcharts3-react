@@ -1,3 +1,5 @@
+console.warn("Version 2.0 is outdated. Please upgrade to version 3.0:\nhttps://github.com/amcharts/amcharts3-react/blob/master/documentation/Migrating%20to%203.0.md#migrating-to-amcharts-react-plugin-30");
+
 (function () {
   function getType(x) {
     // TODO make this faster ?
