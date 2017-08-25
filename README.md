@@ -8,7 +8,7 @@ How to install
      "devDependencies": {
        "react": "^15.4.2",
        "react-dom": "^15.4.2",
-       "@amcharts/amcharts3-react": "^2.0.0"
+       "@amcharts/amcharts3-react": "^3.0.0"
      }
    }
    ```
@@ -44,10 +44,16 @@ How to use
 
 ```js
 React.createElement(AmCharts.React, {
-  "type": "serial",
-  "theme": "light",
-  "graphs": [...],
-  "dataProvider": [...]
+  style: {
+    width: "100%",
+    height: "500px"
+  },
+  options: {
+    "type": "serial",
+    "theme": "light",
+    "graphs": [...],
+    "dataProvider": [...]
+  }
 })
 ```
 
@@ -55,13 +61,19 @@ Or alternatively if you are using JSX:
 
 ```js
 <AmCharts.React
-  type="serial"
-  theme="light"
-  graphs={[...]}
-  dataProvider={[...]} />
+  style={{
+    width: "100%",
+    height: "500px"
+  }}
+  options={{
+    "type": "serial",
+    "theme": "light",
+    "graphs": [...],
+    "dataProvider": [...]
+  }} />
 ```
 
-You can also pass the entire config object:
+You can also define the options object separately:
 
 ```js
 var config = {
@@ -71,12 +83,12 @@ var config = {
   "dataProvider": [...]
 };
 
-<AmCharts.React {...config} />
+<AmCharts.React options={config} />
 ```
 
-The configuration is exactly the same as the [`AmCharts.makeChart`](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method.
+The `options` property supports exactly the same configuration as the [`AmCharts.makeChart`](https://docs.amcharts.com/3/javascriptcharts/AmCharts#makeChart) method, so all of the [AmCharts demos](https://www.amcharts.com/demos/) work the same.
 
-Changes to the configuration are automatically detected when rendering (you do not need to call [`validateNow`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [`validateData`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
+Changes to `options` are automatically detected when rendering (you do *not* need to call [`validateNow`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateNow) or [`validateData`](https://docs.amcharts.com/3/javascriptcharts/AmSerialChart#validateData)).
 
 In addition, this plugin automatically generates an `id`, so you do not need to specify it.
 
@@ -98,6 +110,12 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 
 
 ## Changelog
+
+### 3.0.0
+
+* Rather than passing in the configuration directly, instead you must pass in the configuration using the new `options` property.
+
+* Adding in `delay` property for controlling the chart delay.
 
 ### 2.0.7
 

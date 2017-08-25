@@ -271,11 +271,13 @@
 
     // TODO is this correct ? should this use componentWillUpdate instead ?
     componentDidUpdate: function (oldProps) {
-      var didUpdate = updateObject(this.state.chart, oldProps, this.props.options);
+      if (this.state.chart) {
+        var didUpdate = updateObject(this.state.chart, oldProps, this.props.options);
 
-      // TODO make this faster
-      if (didUpdate) {
-        this.state.chart.validateNow(true);
+        // TODO make this faster
+        if (didUpdate) {
+          this.state.chart.validateNow(true);
+        }
       }
     },
 
@@ -288,10 +290,7 @@
     render: function () {
       return React.createElement("div", {
         id: this.state.id,
-        style: {
-          width: this.props.width || "100%",
-          height: this.props.height || "100%"
-        }
+        style: this.props.style
       });
     }
   });
