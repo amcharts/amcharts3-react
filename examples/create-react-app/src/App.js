@@ -127,7 +127,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <AmCharts.React options={config} />
+        <AmCharts.React style={{ width: "100%", height: "500px" }} options={config} />
       </div>
     );
   }

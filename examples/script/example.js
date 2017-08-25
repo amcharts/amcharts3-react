@@ -48,6 +48,10 @@ var Chart = createReactClass({
   render: function () {
     // Render the chart
     return React.createElement(AmCharts.React, {
+      style: {
+        width: "100%",
+        height: "500px"
+      },
       options: {
         "type": "serial",
         "theme": "light",

@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@amcharts/amcharts3-react@^2.0.0":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@amcharts/amcharts3-react/-/amcharts3-react-2.0.2.tgz#c2942c074f8ab9435c05a30f7ee604fbcf752e5c"
+"@amcharts/amcharts3-react@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@amcharts/amcharts3-react/-/amcharts3-react-3.0.0.tgz#9a1a554dc3b104fe252ec7852a216cba781cb335"
   dependencies:
     create-react-class "^15.5.2"
 
