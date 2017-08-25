@@ -47,9 +47,10 @@ Migrating to amCharts React plugin 3.0
      type="serial"
      theme="light"
      graphs={[...]}
-     dataProvider={[...]}
-   />
+     dataProvider={[...]} />
+   ```
 
+   ```js
    <AmCharts.React {...config} />
    ```
 
@@ -67,8 +68,9 @@ Migrating to amCharts React plugin 3.0
        "theme": "light",
        "graphs": [...],
        "dataProvider": [...]
-     }}
-   />
+     }} />
+   ```
 
+   ```js
    <AmCharts.React options={config} />
    ```

@@ -70,8 +70,7 @@ Or alternatively if you are using JSX:
     "theme": "light",
     "graphs": [...],
     "dataProvider": [...]
-  }}
-/>
+  }} />
 ```
 
 You can also define the options object separately:
