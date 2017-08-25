@@ -127,7 +127,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <AmCharts.React {...config} />
+        <AmCharts.React options={config} />
       </div>
     );
   }
