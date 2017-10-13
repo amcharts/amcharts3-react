@@ -111,6 +111,10 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 
 ## Changelog
 
+### 3.0.2
+
+* Fixing a bug when updating the chart.
+
 ### 3.0.0
 
 * Rather than passing in the configuration directly, instead you must pass in the configuration using the new `options` property.
