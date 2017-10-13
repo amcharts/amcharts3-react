@@ -272,7 +272,7 @@
     // TODO is this correct ? should this use componentWillUpdate instead ?
     componentDidUpdate: function (oldProps) {
       if (this.state.chart) {
-        var didUpdate = updateObject(this.state.chart, oldProps, this.props.options);
+        var didUpdate = updateObject(this.state.chart, oldProps.options, this.props.options);
 
         // TODO make this faster
         if (didUpdate) {
