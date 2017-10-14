@@ -44,8 +44,8 @@ Old syntax
 ```json
 {
   "devDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "amcharts3": "amcharts/amcharts3",
     "amcharts3-react": "amcharts/amcharts3-react",
     "amcharts3-export": "amcharts/export"
@@ -70,8 +70,8 @@ New syntax
 ```json
 {
   "devDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "@amcharts/amcharts3-react": "^2.0.0"
   }
 }
