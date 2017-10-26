@@ -6,8 +6,8 @@ How to install
    ```json
    {
      "devDependencies": {
-       "react": "^15.4.2",
-       "react-dom": "^15.4.2",
+       "react": "^16.0.0",
+       "react-dom": "^16.0.0",
        "@amcharts/amcharts3-react": "^3.0.0"
      }
    }
@@ -111,9 +111,9 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 
 ## Changelog
 
-### 3.0.2
+### 3.0.3
 
-* Fixing a bug when updating the chart.
+* Fixing version ranges for `react` and `react-dom`
 
 ### 3.0.0
 
