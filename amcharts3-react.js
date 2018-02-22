@@ -321,15 +321,14 @@ var createReactClass = require('create-react-class');
     },
 
     render: function () {
-      return React.DOM.div({
-        id: this.state.id,
-        style: {
-          width: this.props.width || "100%",
-          height: this.props.height || "100%"
-        }
-      });
+        return React.createElement("div", {
+            id: this.state.id,
+            style: {
+                width: this.props.width || "100%",
+                height: this.props.height || "100%"
+            }
+        });
     }
-
   });
 })();
 
