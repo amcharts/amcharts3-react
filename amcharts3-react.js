@@ -1,4 +1,5 @@
 const isEqual = require('lodash/isEqual');
+var createReactClass = require('create-react-class');
 
 (function () {
   function getType(x) {
@@ -276,7 +277,7 @@ const isEqual = require('lodash/isEqual');
 
   var id = 0;
 
-  AmCharts.React = React.createClass({
+  AmCharts.React = createReactClass({
     getInitialState: function () {
       return {
         id: "__AmCharts_React_" + (++id) + "__",

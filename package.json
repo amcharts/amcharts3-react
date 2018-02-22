@@ -1,6 +1,6 @@
 {
   "name": "amcharts3-react",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "license": "SEE LICENSE IN LICENSE",
   "main": "index.js",
   "repository": {
@@ -8,6 +8,7 @@
     "url": "https://github.com/amcharts/amcharts3-react.git"
   },
   "dependencies": {
+    "create-react-class": "^15.6.3",
     "lodash": "^4.17.4"
   }
 }
