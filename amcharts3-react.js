@@ -276,6 +276,7 @@ console.warn("Version 1.0 is outdated. Please upgrade to version 2.0:\nhttps://g
     render: function () {
       return React.DOM.div({
         id: this.state.id,
+        className: this.props.className || null,
         style: {
           width: this.props.width || "100%",
           height: this.props.height || "100%"
