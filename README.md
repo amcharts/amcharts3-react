@@ -44,6 +44,7 @@ How to use
 
 ```js
 React.createElement(AmCharts.React, {
+  className: "my-class",
   style: {
     width: "100%",
     height: "500px"
@@ -61,6 +62,7 @@ Or alternatively if you are using JSX:
 
 ```js
 <AmCharts.React
+  className="my-class"
   style={{
     width: "100%",
     height: "500px"
@@ -110,6 +112,10 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 
 
 ## Changelog
+
+### 3.1.0
+
+* Adding in `className` property for specifying the CSS class for the element.
 
 ### 3.0.3
 

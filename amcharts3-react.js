@@ -290,6 +290,7 @@
     render: function () {
       return React.createElement("div", {
         id: this.state.id,
+        className: this.props.className,
         style: this.props.style
       });
     }
