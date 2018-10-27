@@ -23,20 +23,20 @@ How to install
    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
    ```
 
-4. If you are using `<script>` tags, include the React and `amcharts3-react.js` files in your HTML:
+4. If you are using a bundler (like [Webpack](https://webpack.js.org/)), import the `@amcharts/amcharts3-react` plugin:
+
+   ```js
+   import AmCharts from "@amcharts/amcharts3-react";
+   ```
+
+   ----
+
+   If you are using `<script>` tags, include the React and `amcharts3-react.js` files in your HTML:
 
    ```html
    <script src="node_modules/react/dist/react.min.js"></script>
    <script src="node_modules/react-dom/dist/react-dom.min.js"></script>
    <script src="node_modules/@amcharts/amcharts3-react/amcharts3-react.js"></script>
-   ```
-
-   ----
-
-   If you are using a bundler (like [Webpack](https://webpack.js.org/)), import the `@amcharts/amcharts3-react` plugin:
-
-   ```js
-   var AmCharts = require("@amcharts/amcharts3-react");
    ```
 
 How to use
