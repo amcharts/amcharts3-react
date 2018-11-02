@@ -269,7 +269,10 @@ console.warn("Version 1.0 is outdated. Please upgrade to version 2.0:\nhttps://g
 
     componentWillUnmount: function () {
       if (this.state.chart) {
-        this.state.chart.clear();
+        var chart = this.state.chart;
+        if(chart.legend && chart.legend.destroy){
+          chart.clear();
+        }
       }
     },
 
