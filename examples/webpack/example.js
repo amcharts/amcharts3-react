@@ -136,7 +136,5 @@ var Chart = createReactClass({
 });
 
 
-ReactDOM.render(
-  React.createElement(Chart, null),
-  document.getElementById("root")
-);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(React.createElement(Chart, null));
