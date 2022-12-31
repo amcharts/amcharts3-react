@@ -34,8 +34,9 @@ How to install
    If you are using `<script>` tags, include the React and `amcharts3-react.js` files in your HTML:
 
    ```html
-   <script src="node_modules/react/dist/react.min.js"></script>
-   <script src="node_modules/react-dom/dist/react-dom.min.js"></script>
+   <script src="node_modules/react/umd/react.production.min.js"></script>
+   <script src="node_modules/react-dom/umd/react-dom.production.min.js"></script>
+   <script src="node_modules/create-react-class/create-react-class.min.js"></script>
    <script src="node_modules/@amcharts/amcharts3-react/amcharts3-react.js"></script>
    ```
 
@@ -112,6 +113,10 @@ You can see an example program in the `examples/webpack-export` folder. It updat
 
 
 ## Changelog
+
+### 3.1.1
+
+* Adding in support for React 17 and React 18.
 
 ### 3.1.0
 
